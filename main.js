@@ -2,10 +2,16 @@
 $(function () {
     var CalculosBasicos = /** @class */ (function () {
         function CalculosBasicos(cpf) {
-            this.cpf = cpf;
+            this.cpf = parseInt(cpf);
         }
+        CalculosBasicos.prototype.getCpf = function () {
+            return this.cpf;
+        };
         CalculosBasicos.prototype.statusCpf = function () {
-            if (this.cpf.length > 9 && this.cpf.length < 7) {
+            var cpf = this.cpf;
+            var tamanhoCpf = cpf.length;
+            alert(tamanhoCpf);
+            if (tamanhoCpf > 9) {
                 this.cpf = 'invalido';
             }
             else {
@@ -20,10 +26,14 @@ $(function () {
         var cpf = $('#cpf').val();
         /* --- metodo validacao --- */
         var validador = new CalculosBasicos(cpf);
-        console.log(JSON.stringify(validador.statusCpf())
+        var cpfNumber = validador.getCpf();
+        //let status: void = validador.statusCpf()
+        console.log(cpfNumber + " " + validador.statusCpf() + "  << CPF");
         /* --- renderiza no html --- */
-        , 
-        /* --- renderiza no html --- */
-        $('#nCpf').html(cpf), $('#status').html(status));
+        $('#nomeUser').html(nome);
+        $('#nCpf').html(cpf);
+        $('#status').html(status);
+        /* --- default css --- */
+        $('span').css('color', 'red');
     });
 });
