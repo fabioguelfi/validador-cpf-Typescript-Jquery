@@ -3,22 +3,21 @@ $(function () {
     class CalculosBasicos {
 
         private cpf:any
+        private status:string 
         
         constructor(cpf:any) {
             this.cpf = parseInt(cpf)
         }
-        public getCpf(){
-            return this.cpf
+        public getStatus(){
+            return this.status
         }
 
         public statusCpf(){
-            let cpf = this.cpf
-            let tamanhoCpf: number = cpf.length
-            alert(tamanhoCpf)
-            if (tamanhoCpf > 9){
-                this.cpf = 'invalido'
+            let cpf: number = this.cpf.toString().length
+            if (cpf > 9){
+                this.status = 'invalido'
             }else{
-                this.cpf = 'valido'
+                this.status = 'valido'
             }
         }
     }
@@ -33,10 +32,8 @@ $(function () {
         /* --- metodo validacao --- */
 
         let validador = new CalculosBasicos(cpf)
-        let cpfNumber: number = validador.getCpf()
-        //let status: void = validador.statusCpf()
-        console.log(`${cpfNumber} ${validador.statusCpf()}  << CPF`)
-
+        validador.statusCpf()
+        let status = validador.getStatus()
 
         /* --- renderiza no html --- */
         $('#nomeUser').html(nome)

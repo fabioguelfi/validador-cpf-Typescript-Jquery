@@ -4,18 +4,16 @@ $(function () {
         function CalculosBasicos(cpf) {
             this.cpf = parseInt(cpf);
         }
-        CalculosBasicos.prototype.getCpf = function () {
-            return this.cpf;
+        CalculosBasicos.prototype.getStatus = function () {
+            return this.status;
         };
         CalculosBasicos.prototype.statusCpf = function () {
-            var cpf = this.cpf;
-            var tamanhoCpf = cpf.length;
-            alert(tamanhoCpf);
-            if (tamanhoCpf > 9) {
-                this.cpf = 'invalido';
+            var cpf = this.cpf.toString().length;
+            if (cpf > 9) {
+                this.status = 'invalido';
             }
             else {
-                this.cpf = 'valido';
+                this.status = 'valido';
             }
         };
         return CalculosBasicos;
@@ -26,9 +24,8 @@ $(function () {
         var cpf = $('#cpf').val();
         /* --- metodo validacao --- */
         var validador = new CalculosBasicos(cpf);
-        var cpfNumber = validador.getCpf();
-        //let status: void = validador.statusCpf()
-        console.log(cpfNumber + " " + validador.statusCpf() + "  << CPF");
+        validador.statusCpf();
+        var status = validador.getStatus();
         /* --- renderiza no html --- */
         $('#nomeUser').html(nome);
         $('#nCpf').html(cpf);
