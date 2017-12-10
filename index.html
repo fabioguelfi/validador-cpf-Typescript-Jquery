@@ -19,4 +19,38 @@
 
 </body>
 <script src="main.js"></script>
+<script>
+    let brazil = ['Sao Paulo', 'Rio de Janeiro', ' Minas Gerais']
+   
+    //function comum
+    let iLove = brazil.map(function(estado){
+       return `I love ${estado}`
+    })
+
+    //arrow function
+    let iLoveArrow = brazil.map((estado)=>{
+        return `I love ${estado}`
+    })
+
+    //arrow single
+    let iLoveArrowSingle = brazil.map(estado => {
+        return `I love ${estado}`
+    })
+    //arrow one line
+    let iloveArrowOneLine = brazil.map(estado => `I love ${estado}`)
+
+    //objct destruction
+    let [estado, estado2, estado3] = brazil
+    console.log(`${estado}, ${estado2}, ${estado3}`)
+
+    let brazilArray = [estado,estado2,estado3]
+    console.log(brazilArray)
+
+    //arrow function + spreed Operator <<fazer
+   
+
+    console.log(iloveArrowOneLine)
+    
+    
+</script>
 </html>
