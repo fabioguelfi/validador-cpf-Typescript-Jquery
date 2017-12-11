@@ -47,8 +47,8 @@ $(function () {
         let cpf: any = $('#cpf').val()
         let entradafirst: string = $('#entrada').val()
         let entrada : number = parseInt(entradafirst)
-        /* --- metodo validacao --- */
 
+        /* --- metodo validacao --- */
         let validador = new CalculosBasicos(cpf,entrada)
         validador.statusCpf()
         let status = validador.getStatus()
@@ -60,8 +60,14 @@ $(function () {
         $('#status').html(status)
         $('#valor').html(entrada)
         $('#aprovadaRecusada').html(validador.getAprovadaRecusada())
+
         /* --- default css --- */
-        $('span').css('color','red')
+        $('span').css('color','white')
+
+        /* --- atualizar pagina --- */
+        $('#recarregar').click(function() {
+            location.reload();
+        });
         
         /* --- teste --- */
     })

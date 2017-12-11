@@ -49,7 +49,11 @@ $(function () {
         $('#valor').html(entrada);
         $('#aprovadaRecusada').html(validador.getAprovadaRecusada());
         /* --- default css --- */
-        $('span').css('color', 'red');
+        $('span').css('color', 'white');
+        /* --- atualizar pagina --- */
+        $('#recarregar').click(function () {
+            location.reload();
+        });
         /* --- teste --- */
     });
 });

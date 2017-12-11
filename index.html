@@ -6,17 +6,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background:grey">
 
     <form>
+    <div style="width: 200px; position:absolute; left: 50%; margin-left: -100px;top:5vh">
         <input id="nome" type="text" placeholder="Nome:" maxlength="15"><br><br>
-        <input id="cpf" type="number" placeholder="Cpf:" ><br><br>
+        <input id="cpf" type="text" placeholder="Cpf:" maxlength="10"><br><br>
         <input id="entrada" type="text" placeholder="Entrada:" maxlength="7"><br><br>
+    </div>
         <div style="border: 1px solid black">
-        <div style="width: 200px; position:absolute; left: 50%; margin-left: -100px;">
+        <div style="width: 200px; position:absolute; left: 50%; margin-left: -100px;top:25vh">
             <h3><span id="nomeUser"> User </span></h3>
             <p>O cpf <span  id="nCpf">0</span> está <span id="status">valido/invalido</span></p>
             <h5>Entrada de R$<span id="valor"> 00,00</span> foi <span id="aprovadaRecusada"> recusada </span></h5>
+            <button id="recarregar">recarregar</button>
         </div>
         </div>
     </form>
@@ -60,4 +63,8 @@
 
 </script>
 -->
+<script>
+    let exNamoradas = ['Gabrielle', 'Isabella', 'Carolina']
+    
+</script>
 </html>
