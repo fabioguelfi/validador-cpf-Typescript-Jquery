@@ -9,16 +9,21 @@
 <body>
 
     <form>
-        <input id="nome" type="text" placeholder="Nome:"><br><br>
-        <input id="cpf" type="number" placeholder="Cpf:"><br><br>
-        <div>
-            <h1><span id="nomeUser"> User </span></h1>
+        <input id="nome" type="text" placeholder="Nome:" maxlength="15"><br><br>
+        <input id="cpf" type="number" placeholder="Cpf:" ><br><br>
+        <input id="entrada" type="text" placeholder="Entrada:" maxlength="7"><br><br>
+        <div style="border: 1px solid black">
+        <div style="width: 200px; position:absolute; left: 50%; margin-left: -100px;">
+            <h3><span id="nomeUser"> User </span></h3>
             <p>O cpf <span  id="nCpf">0</span> está <span id="status">valido/invalido</span></p>
+            <h5>Entrada de R$<span id="valor"> 00,00</span> foi <span id="aprovadaRecusada"> recusada </span></h5>
+        </div>
         </div>
     </form>
 
 </body>
 <script src="main.js"></script>
+<!--
 <script>
     let brazil = ['Sao Paulo', 'Rio de Janeiro', ' Minas Gerais']
    
@@ -52,5 +57,7 @@
     console.log(iloveArrowOneLine)
     
     
+
 </script>
+-->
 </html>
